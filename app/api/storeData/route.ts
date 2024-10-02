@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import connectDB from '../../../config/database';
+// import connectDB from '../../../config/database';
+import { connectToDB } from '@/utils/connectToDB'
 import Order from '@/models/dataSchema';
 
 export async function POST(request: NextRequest) {
   try {
-    await connectDB();
+    await connectToDB();
 
     const body = await request.json();
     console.log('Received body:', body);
