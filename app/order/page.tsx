@@ -54,8 +54,8 @@ const OrderPayment = () => {
                         const quantity = menuItem ? menuItem.quantities : 0;
 
                         return (
-                            <div key={index} className="items-center">
-                                <Image src={data.image} alt="product" width={350} height={350} />
+                            <div key={index} className="flex flex-col justify-center items-center">
+                                <Image src={data.image} alt="product" width={200} height={200} />
                                 <div className="ml-5">
                                     <h1 className="text-lg text-center mt-2">{data.name}</h1>
                                     <h1 className="text-lg text-center">{quantity * 10}฿</h1>

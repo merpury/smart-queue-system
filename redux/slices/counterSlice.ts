@@ -41,7 +41,7 @@ const menuSlice = createSlice({
                 (item) => item.menu === action.payload
             );
 
-            if (existIndexMenu !== -1 && state.menuLists[existIndexMenu].quantities > 1) {
+            if (existIndexMenu !== -1 && state.menuLists[existIndexMenu].quantities >= 1) {
                 state.menuLists[existIndexMenu].quantities -= 1;
             }
 
