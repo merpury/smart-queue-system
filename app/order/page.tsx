@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import { orderData } from "./orderData";
-import lessIcon from '../images/lessIcon.svg';
-import plusIcon from '../images/addIco.svg';
+import { FaCircleMinus } from "react-icons/fa6";
+import { FaCirclePlus } from "react-icons/fa6";
 import cartIcon from '../images/cartIcon.png';
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
@@ -55,18 +55,14 @@ const OrderPayment = () => {
 
                         return (
                             <div key={index} className="flex flex-col justify-center items-center">
-                                <Image src={data.image} alt="product" width={200} height={200} />
-                                <div className="ml-5">
-                                    <h1 className="text-lg text-center mt-2">{data.name}</h1>
-                                    <h1 className="text-lg text-center">{quantity * 10}฿</h1>
-                                    <div className="flex items-center justify-center mt-2">
-                                        <button onClick={() => handleDecrease(data.name)}>
-                                            <Image src={lessIcon} alt="less" width={30} height={30} />
-                                        </button>
-                                        <h1 className="text-lg text-center mx-7">{quantity}</h1>
-                                        <button onClick={() => handleIncrease(data.name, data.image)}>
-                                            <Image src={plusIcon} alt="plus" width={30} height={30} />
-                                        </button>
+                                <Image src={data.image} alt="product" width={200} height={200} className="rounded-xl"/>
+                                <div className="flex flex-col justify-center items-center gap-2 mt-2">
+                                    <h1 className="text-xl">{data.name}</h1>
+                                    <h1 className="text-gray-500">{quantity * 10}฿</h1>
+                                    <div className="flex items-center justify-center mt-2 gap-6">
+                                        <FaCircleMinus size={30} color="#E95322" onClick={() => handleDecrease(data.name)}/>
+                                        <h1 className="text-lg">{quantity}</h1>
+                                        <FaCirclePlus size={30} color="#E95322" onClick={() => handleIncrease(data.name, data.image)}/>
                                     </div>
                                 </div>
                             </div>

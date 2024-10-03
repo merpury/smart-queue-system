@@ -43,6 +43,9 @@ const menuSlice = createSlice({
 
             if (existIndexMenu !== -1 && state.menuLists[existIndexMenu].quantities >= 1) {
                 state.menuLists[existIndexMenu].quantities -= 1;
+                if (state.menuLists[existIndexMenu].quantities === 0) {
+                    state.menuLists.splice(existIndexMenu, 1);
+                }
             }
 
             // คำนวณราคารวมใหม่

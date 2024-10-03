@@ -73,7 +73,7 @@ function ConfirmOrder() {
 
   const handleDecrease = (menu: string) => {
     const existingItem = menuLists.find(item => item.menu === menu);
-    if (existingItem && existingItem.quantities > 1) {
+    if (existingItem) {
       dispatch(decreaseQuantityMenu(menu));
     }
   };
